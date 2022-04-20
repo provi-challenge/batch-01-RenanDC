@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import './index.css';
-import App from './App';
+import App from './pages/home/App';
+import PaymentView from './pages/payment/Payment';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <Router>
+  //   <App />
+  // </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/payments/:id" element={<PaymentView />} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
